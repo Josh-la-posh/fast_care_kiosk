@@ -43,38 +43,38 @@ class _AllBillsState extends State<AllBills> {
         'amount': '1,500.00',
         'status': 'paid'
       },
-      // {
-      //   'date': '02/11/2020',
-      //   'time': '10:30:20am',
-      //   'number': '19530',
-      //   'items': '1',
-      //   'amount': '1,500.00',
-      //   'status': 'outstanding'
-      // },
-      // {
-      //   'date': '02/11/2020',
-      //   'time': '10:30:20am',
-      //   'number': 'RE857309',
-      //   'items': '3',
-      //   'amount': '3,000.00',
-      //   'status': 'paid'
-      // },
-      // {
-      //   'date': '02/11/2020',
-      //   'time': '10:30:20am',
-      //   'number': '19530',
-      //   'items': '1',
-      //   'amount': '1,500.00',
-      //   'status': 'outstanding'
-      // },
-      // {
-      //    'date': '02/11/2020',
-      //    'time': '10:30:20am',
-      //    'number': '19530',
-      //    'items': '1',
-      //    'amount': '1,500.00',
-      //    'status': 'paid'
-      //  }
+      {
+        'date': '02/11/2020',
+        'time': '10:30:20am',
+        'number': '19530',
+        'items': '1',
+        'amount': '1,500.00',
+        'status': 'outstanding'
+      },
+      {
+        'date': '02/11/2020',
+        'time': '10:30:20am',
+        'number': 'RE857309',
+        'items': '3',
+        'amount': '3,000.00',
+        'status': 'paid'
+      },
+      {
+        'date': '02/11/2020',
+        'time': '10:30:20am',
+        'number': '19530',
+        'items': '1',
+        'amount': '1,500.00',
+        'status': 'outstanding'
+      },
+      {
+         'date': '02/11/2020',
+         'time': '10:30:20am',
+         'number': '19530',
+         'items': '1',
+         'amount': '1,500.00',
+         'status': 'paid'
+       }
     ];
 
     return Scaffold(
@@ -87,25 +87,23 @@ class _AllBillsState extends State<AllBills> {
           elevation: 0,
         ),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(44.5, 0, 44.5, 10),
+          padding: const EdgeInsets.fromLTRB(44.5, 189, 44.5, 10),
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
                         'Patient\'s Name: ',
                         style: TextStyle(
                             color: Color.fromRGBO(52, 52, 52, 1),
                             fontSize: 24.0),
                       ),
-                      SizedBox(
-                        height: 21.0,
-                      ),
+                      SizedBox(height: 21.0,),
                       Text(
                         'Tel: ',
                         style: TextStyle(
@@ -115,17 +113,15 @@ class _AllBillsState extends State<AllBills> {
                     ],
                   ),
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
                         'Patient\'s ID: ',
                         style: TextStyle(
                             color: Color.fromRGBO(52, 52, 52, 1),
                             fontSize: 24.0),
                       ),
-                      SizedBox(
-                        height: 21.0,
-                      ),
+                      SizedBox(height: 21.0,),
                       Text(
                         'Gender: ',
                         style: TextStyle(
@@ -140,84 +136,105 @@ class _AllBillsState extends State<AllBills> {
                 height: 110.0,
               ),
               Container(
-                width: 400,
+                width: 995,
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'All Invoices',
-                          style: (TextStyle(
-                            color: Color.fromRGBO(1, 70, 125, 1),
-                            fontSize: 24,
-                          )),
-                        ),
-                        SizedBox(
-                          width: 46,
-                        ),
-                      ],
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 51, horizontal: 23),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'All Invoices',
+                            style: (TextStyle(
+                              color: Color.fromRGBO(1, 70, 125, 1),
+                              fontSize: 24,
+                            )),
+                          ),
+                          SizedBox(
+                            width: 46,
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 41.0,
                     ),
                     Table(
-                      border: TableBorder.all(),
-                      // columnWidths: const <int, TableColumnWidth>{
-                      //   0: IntrinsicColumnWidth(),
-                      //   1: FlexColumnWidth(),
-                      //   2: FixedColumnWidth(0),
-                      // },
+                      border: TableBorder.symmetric(),
+                      columnWidths: const <int, TableColumnWidth>{
+                        0: IntrinsicColumnWidth(),
+                        1: FlexColumnWidth(),
+                        // 2: FixedColumnWidth(40),
+                      },
                       defaultVerticalAlignment:
-                          TableCellVerticalAlignment.middle,
+                      TableCellVerticalAlignment.middle,
                       children: [
                         TableRow(
                           children: headers
-                              .map((header) => Text(
-                                    header,
-                                    style: const TextStyle(
-                                        color: Color.fromRGBO(80, 80, 80, 1),
-                                        fontSize: 20),
-                                  ))
+                              .map((header) => Padding(
+                            padding: const EdgeInsets.fromLTRB(40, 19, 0, 19),
+                            child: Text(
+                              header,
+                              style: const TextStyle(
+                                  color: Color.fromRGBO(80, 80, 80, 1),
+                                  fontSize: 20),
+                            ),
+                          ),)
                               .toList(),
                         ),
                         for (var list in lists)
                           TableRow(children: [
-                            Column(
-                              children: [
-                                Text(
-                                  list['date'] as String,
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 30, 0, 30),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    list['date'] as String,
+                                    style: const TextStyle(
+                                        color: Color.fromRGBO(62, 65, 76, 1),
+                                        fontSize: 18),
+                                  ),
+                                  Text(list['time'] as String,
+                                      style: const TextStyle(
+                                          color: Color.fromRGBO(131, 135, 153, 1),
+                                          fontSize: 14)),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 30, 0, 30),
+                              child: Text(list['number'] as String,
                                   style: const TextStyle(
                                       color: Color.fromRGBO(62, 65, 76, 1),
-                                      fontSize: 18),
-                                ),
-                                Text(list['time'] as String,
-                                    style: const TextStyle(
-                                        color: Color.fromRGBO(131, 135, 153, 1),
-                                        fontSize: 14)),
-                              ],
+                                      fontSize: 18)),
                             ),
-                            Text(list['number'] as String,
-                                style: const TextStyle(
-                                    color: Color.fromRGBO(62, 65, 76, 1),
-                                    fontSize: 18)),
-                            Text(list['items'] as String,
-                                style: const TextStyle(
-                                    color: Color.fromRGBO(62, 65, 76, 1),
-                                    fontSize: 18)),
-                            Text(list['amount'] as String,
-                                style: const TextStyle(
-                                    color: Color.fromRGBO(62, 65, 76, 1),
-                                    fontSize: 18)),
-                            Text(list['status'] as String,
-                                style: const TextStyle(
-                                    color: Color.fromRGBO(237, 161, 47, 1),
-                                    fontSize: 18)),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 30, 0, 30),
+                              child: Text(list['items'] as String,
+                                  style: const TextStyle(
+                                      color: Color.fromRGBO(62, 65, 76, 1),
+                                      fontSize: 18)),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 30, 0, 30),
+                              child: Text(list['amount'] as String,
+                                  style: const TextStyle(
+                                      color: Color.fromRGBO(62, 65, 76, 1),
+                                      fontSize: 18)),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 30, 0, 30),
+                              child: Text(list['status'] as String,
+                                  style: const TextStyle(
+                                      color: Color.fromRGBO(237, 161, 47, 1),
+                                      fontSize: 18)),
+                            ),
                             TextButton(
                                 style: ButtonStyle(
                                     foregroundColor:
-                                        MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(Colors.white),
                                     backgroundColor: MaterialStateProperty.all(
                                         const Color.fromRGBO(27, 136, 223, 1))),
                                 onPressed: () {

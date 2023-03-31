@@ -23,7 +23,7 @@ class _PatientNumberState extends State<PatientNumber> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(157, 0, 157, 0),
+        padding: const EdgeInsets.fromLTRB(157, 288, 157, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -42,23 +42,26 @@ class _PatientNumberState extends State<PatientNumber> {
                   color: Color.fromRGBO(99, 107, 117, 1)),
             ),
             const SizedBox(
-              height: 109.0,
+              height: 89.0,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter invoice number'),
-              ),
+            const TextField(
+              // style: TextStyle(),
+              decoration: InputDecoration(
+                  labelText: 'Invoice Number',
+                  border: OutlineInputBorder(),
+                  contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                  hintText: 'Enter invoice number'
+                ),
             ),
             const SizedBox(
-              height: 67.0,
+              height: 57.0,
             ),
             TextButton(
-                style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
-                  backgroundColor: MaterialStateProperty.all(Colors.blue,),
+                style: TextButton.styleFrom(
+                  fixedSize: const Size(768, 88),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blue,
+                  textStyle: const TextStyle(fontSize: 28),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, '/outstanding-bill');

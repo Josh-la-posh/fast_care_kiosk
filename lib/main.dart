@@ -9,9 +9,9 @@ import 'package:fast_care_kiosk/pages/retrieve_bills/paid_bills.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/patient-number',
+    initialRoute: '/',
     routes: {
-      '/patient-number': (context) => const PatientNumber(),
+      '/': (context) => const PatientNumber(),
       '/outstanding-bill': (context) => const OutstandingBills(),
       '/invoice-detail': (context) => const InvoiceDetails(),
       '/all-bills': (context) => const AllBills(),
